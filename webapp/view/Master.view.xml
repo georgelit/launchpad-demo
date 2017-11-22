@@ -6,14 +6,14 @@
 			<!--<List id="notificationList" class="sapContrast sapContrastPlus" items="{localModel>/Chat}">-->
 			<!--	<NotificationListItem title="{localModel>Title}" description="{localModel>Text}" priority="{localModel>Priority}" showCloseButton="false"/>-->
 			<!--</List>-->
-			<suite:Timeline class="sapContrast sapContrastPlus" showItemFilter="false" showSearch="false" showSort="false" showSuggestion="false" content="{localModel>/Chat}" >
-				<suite:content>
-					<suite:TimelineItem title="{localModel>Title}" text="{localModel>Text}" userName="{localModel>Username}" dateTime="{localModel>Datetime}" icon="{localModel>Icon}"/>
+			<!--<suite:Timeline class="sapContrast sapContrastPlus" showItemFilter="false" showSearch="false" showSort="false" showSuggestion="false" content="{localModel>/Chat}" >-->
+			<!--	<suite:content>-->
+			<!--		<suite:TimelineItem title="{localModel>Title}" text="{localModel>Text}" userName="{localModel>Username}" dateTime="{localModel>Datetime}" icon="{localModel>Icon}"/>-->
 						
 					
-				</suite:content>
+			<!--	</suite:content>-->
 				
-			</suite:Timeline>
+			<!--</suite:Timeline>-->
 			<!--</Panel>-->
 		</content>
 	</Page>
