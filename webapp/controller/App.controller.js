@@ -7,6 +7,7 @@ sap.ui.define([
 	return Controller.extend("ysc.websocket.controller.App", {
 		
 		onInit:function(){
+			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 			this._oSplitApp = this.byId("idAppControl");
 			
 		   //local model
