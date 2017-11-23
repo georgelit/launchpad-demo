@@ -17,8 +17,12 @@ sap.ui.define([
 				this.getView().setModel(oViewModel, "localModel");
 				
 		
+			},
+			
+			press: function() {
+				
 			}
-
+			
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).

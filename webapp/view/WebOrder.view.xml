@@ -1,0 +1,242 @@
+<mvc:View xmlns:core="sap.ui.core" 
+xmlns:html="http://www.w3.org/1999/xhtml" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns:layout="sap.ui.layout"
+xmlns:f="sap.f"
+xmlns:fb="sap.ui.comp.filterbar"
+xmlns:vm="sap.ui.comp.variants"
+displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+		<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" showFooter="true">
+			<!-- DynamicPage Title -->
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<vm:VariantManagement standardItemText="My Products">
+						</vm:VariantManagement>
+					</f:heading>
+					<f:actions>
+						<ToolbarSpacer/>
+						<!--<Button -->
+						<!--		text="Global Action"-->
+						<!--		type="Transparent"/>-->
+						<!--<Button id="btn2"-->
+						<!--		text="Toggle Footer"-->
+						<!--		type="Transparent"-->
+						<!--		press="onToggleFooter"/>-->
+						<!--<Button id="btn3"-->
+						<!--		icon="sap-icon://action"-->
+						<!--		type="Transparent"/>-->
+					</f:actions>
+				</f:DynamicPageTitle>
+			</f:title>
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="지시일">
+									<fb:control>
+										<DateRangeSelection
+											id="DRS2"
+											dateValue="{path:'/dateValueDRS2'}"
+											secondDateValue="{path:'/secondDateValueDRS2'}"
+											minDate="{path:'/dateMinDRS2'}"
+											maxDate="{path:'/dateMaxDRS2'}"
+											change="handleChange"
+										/>
+									</fb:control>				
+								</fb:FilterItem>								
+								<fb:FilterItem name="B" label="Sales Org">
+									<fb:control>
+										<Input
+											id="salesOrg"
+											type="Text"
+											placeholder="Enter Sales Org ..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>				
+								<fb:FilterItem name="C" label="Sales Office">
+									<fb:control>
+										<Input
+											id="salesOffice"
+											type="Text"
+											placeholder="Enter Sales Office ..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+								<fb:FilterItem name="D" label="Sales Employee">
+									<fb:control>
+										<Input
+											id="salesEmployee"
+											type="Text"
+											placeholder="Enter Sales Employee ..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+								<fb:FilterItem name="E" label="Plant">
+									<fb:control>
+										<Input
+											id="plant"
+											type="Text"
+											placeholder="Enter Plant ..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+								<fb:FilterItem name="F" label="Storage Location">
+									<fb:control>
+										<Input
+											id="storage"
+											type="Text"
+											placeholder="Enter Storage Loc..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+								<fb:FilterItem name="G" label="Sold to Party">
+									<fb:control>
+										<Input
+											id="soldto"
+											type="Text"
+											placeholder="Enter Sold to..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+								<fb:FilterItem name="H" label="Material">
+									<fb:control>
+										<Input
+											id="material"
+											type="Text"
+											placeholder="Enter Material..."
+											showSuggestion="true"
+											showValueHelp="true"
+											valueHelpRequest="handleValueHelp"
+											suggestionItems="{/ProductCollection}" >
+											<suggestionItems>
+												<core:Item text="{Name}" />
+											</suggestionItems>
+										</Input>
+									</fb:control>				
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<!-- DynamicPage Content -->
+			<f:content>
+				<Table
+						id="idProductsTable"
+						inset="false"
+						items="{
+                            path: '/ProductCollection'
+                        }">
+					<headerToolbar>
+						<OverflowToolbar id="otbSubheader">
+								<ToggleButton 
+									id="btn1"
+									pressed="true" 
+									text="미처리 오더"
+									press="onBtn1Press"/>
+								<ToggleButton
+									id="btn2"
+									text="Blocked 오더"
+									pressed="false" 
+									press="onBtn2Press"/>
+								<ToggleButton
+									id="btn3"
+									text="처리완료"
+									pressed="false" 
+									press="onBtn3Press"/>
+						</OverflowToolbar>
+					</headerToolbar>
+					<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Name"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Category"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="SupplierName"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem
+								vAlign="Middle">
+							<cells>
+								<ObjectIdentifier
+										title="{Name}"
+										text="{ProductId}"/>
+								<Text text="{Category}"/>
+								<Text text="{SupplierName}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+
+			<!-- DynamicPage Footer -->
+			<f:footer>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<Button type="Accept" text="오더생성"/>
+					<Button type="Reject" text="오더취소"/>
+					<Button type="Reject" text="주문취소"/>
+				</OverflowToolbar>
+			</f:footer>
+		</f:DynamicPage>
+		</pages>
+	</App></mvc:View>
