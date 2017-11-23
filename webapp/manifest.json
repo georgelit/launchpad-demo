@@ -22,14 +22,6 @@
 			"salesNorthwind": {
 				"uri": "model/salesNorthwind.json",
 				"type": "JSON"
-			},
-			"northwind": {
-				"uri": "services.odata.org/Northwind/Northwind.svc",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0",
-					"localUri": "localService/metadata.xml"
-				}
 			}
 		}
 	},
@@ -84,9 +76,6 @@
 			"salesNorthwind": {
 				"type": "sap.ui.model.json.JSONModel",
 				"dataSource": "salesNorthwind"
-			},
-			"northwind": {
-				"dataSource": "northwind"
 			}
 		},
 		"resources": {
