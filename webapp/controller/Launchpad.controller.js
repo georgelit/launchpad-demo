@@ -20,7 +20,7 @@ sap.ui.define([
 			},
 			
 			press: function() {
-				
+				this.getRouter().navTo("WebOrder", {}, true);
 			}
 			
 		/**

@@ -95,6 +95,10 @@
 				"name": "master",
 				"pattern": "",
 				"target": ["Master","Launchpad"]
+			},{
+				"name": "WebOrder",
+				"pattern": "WebOrder",
+				"target": ["Master","WebOrder"]
 			}],
 			"targets": {
 				"Master": {
@@ -104,6 +108,11 @@
 				},"Launchpad": {
 					"viewName": "Launchpad",
 					"viewId": "idLaunchpad",
+					"controlAggregation": "detailPages",
+					"viewLevel": 1
+				},"WebOrder": {
+					"viewName": "WebOrder",
+					"viewId": "idWebOrder",
 					"controlAggregation": "detailPages",
 					"viewLevel": 1
 				}

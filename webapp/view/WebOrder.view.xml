@@ -1,4 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" 
+<mvc:View 
 xmlns:html="http://www.w3.org/1999/xhtml" 
 xmlns:mvc="sap.ui.core.mvc"
 xmlns:core="sap.ui.core"
@@ -6,9 +6,10 @@ xmlns:layout="sap.ui.layout"
 xmlns:f="sap.f"
 xmlns:fb="sap.ui.comp.filterbar"
 xmlns:vm="sap.ui.comp.variants"
-displayBlock="true" xmlns="sap.m">
-	<App>
-		<pages>
+displayBlock="true" xmlns="sap.m"
+controllerName="ysc.websocket.controller.WebOrder"
+>
+
 		<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}" showFooter="true">
 			<!-- DynamicPage Title -->
 			<f:title>
@@ -173,8 +174,9 @@ displayBlock="true" xmlns="sap.m">
 				<Table
 						id="idProductsTable"
 						inset="false"
+						mode="MultiSelect"
 						items="{
-                            path: '/ProductCollection'
+                            path: 'orderModel>/pending'
                         }">
 					<headerToolbar>
 						<OverflowToolbar id="otbSubheader">
@@ -199,17 +201,62 @@ displayBlock="true" xmlns="sap.m">
 						<Column
 								minScreenWidth="Tablet"
 								demandPopin="true">
-							<Text text="Name"/>
+							<Text text="순번"/>
 						</Column>
 						<Column
 								minScreenWidth="Tablet"
 								demandPopin="true">
-							<Text text="Category"/>
+							<Text text="주문일"/>
 						</Column>
 						<Column
 								minScreenWidth="Tablet"
 								demandPopin="true">
-							<Text text="SupplierName"/>
+							<Text text="지시일"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Sold-to"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Sold-to Name"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Ship-to"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Ship-to Name"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Material Number"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="주문량"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="지시량"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Unit of Measure"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="도착요청일"/>
 						</Column>
 					</columns>
 
@@ -218,10 +265,18 @@ displayBlock="true" xmlns="sap.m">
 								vAlign="Middle">
 							<cells>
 								<ObjectIdentifier
-										title="{Name}"
-										text="{ProductId}"/>
-								<Text text="{Category}"/>
-								<Text text="{SupplierName}"/>
+										title="{orderModel>seq}"/>
+								<Text text="{orderModel>req_date}"/>
+								<Text text="{orderModel>rdd_date}"/>
+								<Text text="{orderModel>kunag}"/>
+								<Text text="{orderModel>kunagt}"/>
+								<Text text="{orderModel>kunnr}"/>
+								<Text text="{orderModel>kunnrt}"/>
+								<Text text="{orderModel>matnr}"/>
+								<Text text="{orderModel>ord_lfimg}"/>
+								<Text text="{orderModel>req_qty}"/>
+								<Text text="{orderModel>meins}"/>
+								<Text text="{orderModel>arv_date}"/>
 							</cells>
 						</ColumnListItem>
 					</items>
@@ -238,5 +293,4 @@ displayBlock="true" xmlns="sap.m">
 				</OverflowToolbar>
 			</f:footer>
 		</f:DynamicPage>
-		</pages>
-	</App></mvc:View>
+</mvc:View>
