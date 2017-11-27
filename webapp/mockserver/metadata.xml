@@ -56,13 +56,19 @@
 				<Property Name="Kunnr" Type="Edm.String" MaxLength="10"
 					sap:aggregation-role="dimension" sap:text="Name1" sap:label="Customer"
 					sap:creatable="false" />
-				<Property Name="Dmbtr" Type="Edm.Decimal" Precision="25"
-					Scale="2" sap:aggregation-role="measure" sap:unit="Hwaer"
-					sap:label="Amount in LC" sap:creatable="false" sap:updatable="false" />
+				<Property Name="Dmbtr" Type="Edm.String" MaxLength="30"
+					sap:aggregation-role="dimension" sap:label="Material"
+					sap:creatable="false"/>
 				<Property Name="Hwaer" Type="Edm.String" MaxLength="5"
-					sap:aggregation-role="dimension" sap:display-format="UpperCase"
-					sap:label="Cürröency" sap:creatable="false" sap:updatable="false"
-					sap:semantics="currency-code" />
+					sap:aggregation-role="dimension" sap:label="주문량"
+					sap:creatable="false" />
+				<!--<Property Name="Dmbtr" Type="Edm.Decimal" Precision="25"-->
+				<!--	Scale="2" sap:aggregation-role="measure" sap:unit="Hwaer"-->
+				<!--	sap:label="Amount in LC" sap:creatable="false" sap:updatable="false" />-->
+				<!--<Property Name="Hwaer" Type="Edm.String" MaxLength="5"-->
+				<!--	sap:aggregation-role="dimension" sap:display-format="UpperCase"-->
+				<!--	sap:label="Cürröency" sap:creatable="false" sap:updatable="false"-->
+				<!--	sap:semantics="currency-code" />-->
 				<Property Name="Name1" Type="Edm.String" MaxLength="35"
 					sap:label="Name" sap:creatable="false" sap:updatable="false" />
 				<Property Name="BUDAT" Type="Edm.DateTime" Precision="0"
@@ -72,9 +78,12 @@
 				<Property Name="BLDAT" Type="Edm.DateTime" Precision="0"
 					sap:aggregation-role="dimension" sap:display-format="Date"
 					sap:label="Document Date" sap:creatable="false" sap:updatable="false" />
-				<Property Name="Cnt" Type="Edm.Int32" sap:aggregation-role="measure"
-					sap:label="Count" sap:creatable="false" sap:updatable="false"
-					sap:filterable="true" />
+				<!--<Property Name="Cnt" Type="Edm.Int32" sap:aggregation-role="measure"-->
+				<!--	sap:label="Count" sap:creatable="false" sap:updatable="false"-->
+				<!--	sap:filterable="true" />-->
+				<Property Name="Cnt" Type="Edm.String" MaxLength="10"
+					sap:aggregation-role="dimension" sap:label="Web Order Seq"
+					sap:creatable="false" />
 				<Property Name="MyBoolean" Type="Edm.Boolean"
 					Nullable="false" sap:display-format="UpperCase" sap:label="My Boolean"
 					sap:creatable="false" sap:updatable="true" sap:sortable="true"
@@ -3962,21 +3971,41 @@
 				<Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
 					<Collection>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="Bukrs" />
-							<PropertyValue Property="Label" String="my Bukrs" />
+							<PropertyValue Property="Value" Path="Cnt" />
+							<PropertyValue Property="Label" String="WebOrder Seq." />
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
+								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Low" />
+						</Record>
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="BUDAT" />
+							<PropertyValue Property="Label" String="주문일" />
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
 								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="Gjahr" />
+							<PropertyValue Property="Value" Path="BLDAT" />
+							<PropertyValue Property="Label" String="지시일" />
 							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
-								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />
+								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
+							<PropertyValue Property="Value" Path="Bukrs" />
+							<PropertyValue Property="Label" String="Sold to Party" />
+							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
+								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/High" />
+						</Record>
+						<!--<Record Type="com.sap.vocabularies.UI.v1.DataField">-->
+						<!--	<PropertyValue Property="Value" Path="Gjahr" />-->
+						<!--	<Annotation Term="com.sap.vocabularies.UI.v1.Importance"-->
+						<!--		EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Medium" />-->
+						<!--</Record>-->
+						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Kunnr" />
+							<PropertyValue Property="Label" String="Ship to Party" />
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Name1" />
+							<PropertyValue Property="Label" String="Ship to Party Name" />
 						</Record>
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Dmbtr" />
@@ -3984,11 +4013,6 @@
 						<Record Type="com.sap.vocabularies.UI.v1.DataField">
 							<PropertyValue Property="Value" Path="Hwaer" />
 						</Record>						
-						<Record Type="com.sap.vocabularies.UI.v1.DataField">
-							<PropertyValue Property="Value" Path="Cnt" />
-							<Annotation Term="com.sap.vocabularies.UI.v1.Importance"
-								EnumMember="com.sap.vocabularies.UI.v1.ImportanceType/Low" />
-						</Record>
 					</Collection>
 				</Annotation>
 				
