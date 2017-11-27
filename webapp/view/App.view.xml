@@ -1,5 +1,5 @@
 <mvc:View controllerName="ysc.websocket.controller.App" xmlns:l="sap.ui.layout" xmlns:tnt="sap.tnt"
-	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" height="100%">
 	<App >
 		<pages>
 		  <Page showHeader="false">	
@@ -20,8 +20,8 @@
 					<Switch change=".onPressSwitch" state="true" visible="false"/>
 					<Button  icon="sap-icon://ui-notifications"  type="Transparent" press=".onPressHome"/>
 				</tnt:ToolHeader>
-				
-				<SplitContainer id="idAppControl" mode="HideMode"/>
+				<App id="idAppControl" height="calc(100% - 48px)"/>
+				<!--<SplitContainer id="idAppControl" mode="HideMode"/>-->
 			</Page>
 		</pages>
 	</App>

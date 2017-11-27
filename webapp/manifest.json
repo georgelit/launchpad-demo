@@ -93,6 +93,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewPath": "ysc.websocket.view",
 				"controlId": "idAppControl",
+				"controlAggregation":"pages",
 				"viewType": "XML",
 				"transition": "slide"
 			},
@@ -100,42 +101,35 @@
 				{
 					"name": "master",
 					"pattern": "",
-					"target": [
-						"Master",
-						"Launchpad"
-					]
+					"target": "Launchpad"
 				},
 				{
 					"name": "WebOrder",
 					"pattern": "WebOrder",
-					"target": [
-						"Master",
-						"SmartFilterBar"
-					]
+					"target": "SmartFilterBar"
 				}
 			],
 			"targets": {
 				"Master": {
 					"viewName": "Master",
-					"controlAggregation": "masterPages",
+				
 					"viewLevel": 1
 				},
 				"Launchpad": {
 					"viewName": "Launchpad",
 					"viewId": "idLaunchpad",
-					"controlAggregation": "detailPages",
 					"viewLevel": 1
 				},
 				"WebOrder": {
 					"viewName": "WebOrder",
 					"viewId": "idWebOrder",
-					"controlAggregation": "detailPages",
+				
 					"viewLevel": 1
 				},
 				"SmartFilterBar": {
 					"viewName": "SmartFilterBar",
 					"viewId": "idSmartFilterBarr",
-					"controlAggregation": "detailPages",
+				
 					"viewLevel": 1
 				}
 			}

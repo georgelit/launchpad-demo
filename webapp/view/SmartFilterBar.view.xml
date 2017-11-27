@@ -4,6 +4,7 @@
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	controllerName="ysc.websocket.controller.SmartFilterBar"
 	height="100%">
+	<Page>
 	<!--<Button id="toggleUpdateMode" text="Change to 'LiveMode'" press="toggleUpdateMode"></Button>		-->
 		<smartFilterBar:SmartFilterBar id="smartFilterBar"
 		    persistencyKey="aaa"
@@ -42,4 +43,13 @@
 				<FlexItemData growFactor="1" baseSize="0%" />
 			</smartTable:layoutData>
 		</smartTable:SmartTable>
+		<footer>
+			<Toolbar>
+				<ToolbarSpacer/>
+				<Button text="오더 생성" type="Emphasized"/>
+				<Button text="오더 취소" type="Accept"/>
+				<Button text="주문 취소" type="Reject"/>
+			</Toolbar>
+		</footer>
+		</Page>
 </core:View>
