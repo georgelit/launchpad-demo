@@ -1,0 +1,45 @@
+<core:View xmlns:core="sap.ui.core" xmlns="sap.m"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="ysc.websocket.controller.SmartFilterBar"
+	height="100%">
+	<!--<Button id="toggleUpdateMode" text="Change to 'LiveMode'" press="toggleUpdateMode"></Button>		-->
+		<smartFilterBar:SmartFilterBar id="smartFilterBar"
+		    persistencyKey="aaa"
+			considerSelectionVariants="true"
+			entityType="LineItems"
+			beforeVariantSave="onBeforeVariantSave"
+			beforeVariantFetch="onBeforeVariantFetch"
+			afterVariantLoad="onAfterVariantLoad"
+		>
+			<smartFilterBar:controlConfiguration>
+				<!--<smartFilterBar:ControlConfiguration-->
+				<!--	key="MyOwnFilterField" index="1" label="Custom Filter Field"-->
+				<!--	groupId="_BASIC" width="300px" mandatory="mandatory"-->
+				<!--	visibleInAdvancedArea="true">-->
+				<!--	<smartFilterBar:customControl>-->
+				<!--		<Select id="foo" customData:hasValue="true">-->
+				<!--			<core:Item key="1" text="ONE" />-->
+				<!--			<core:Item key="2" text="TWO" />-->
+				<!--			<core:Item key="3" text="THREE" />-->
+				<!--		</Select>-->
+				<!--	</smartFilterBar:customControl>					-->
+				<!--</smartFilterBar:ControlConfiguration>-->
+				<smartFilterBar:ControlConfiguration key="YourBoolean"  filterType="single" />
+				<smartFilterBar:ControlConfiguration key="MyBoolean"  filterType="single" />
+			</smartFilterBar:controlConfiguration>
+			<!-- layout data used to make the table growing but the filter bar fixed -->
+			<smartFilterBar:layoutData>
+				<FlexItemData shrinkFactor="0"/>
+			</smartFilterBar:layoutData>  					
+		</smartFilterBar:SmartFilterBar>
+		<smartTable:SmartTable id="smartTable" entitySet="LineItemsSet"
+			smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true"
+			useVariantManagement="false" useTablePersonalisation="true" header="Line Items"
+			showRowCount="true">
+			<smartTable:layoutData>
+				<FlexItemData growFactor="1" baseSize="0%" />
+			</smartTable:layoutData>
+		</smartTable:SmartTable>
+</core:View>
