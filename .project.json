@@ -19,5 +19,9 @@
     "mockRequestsFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false
+  },
+  "deploy": {
+    "destination": "S16",
+    "name": "YLAUNCHPAD_DEMO"
   }
 }

@@ -7,6 +7,9 @@ sap.ui.define([
 	return Controller.extend("ysc.websocket.controller.App", {
 		
 		onInit:function(){
+			var oRenderer = sap.ushell.Container.getRenderer("fiori2");
+            oRenderer.setHeaderVisibility(false, false, ["home", "app"]);
+		
 			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
 			this._oSplitApp = this.byId("idAppControl");
 			
