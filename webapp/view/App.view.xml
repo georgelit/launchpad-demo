@@ -20,6 +20,7 @@
 					<Switch change=".onPressSwitch" state="true" visible="false"/>
 					<Button  icon="sap-icon://ui-notifications"  type="Transparent" press=".onPressHome"/>
 				</tnt:ToolHeader>
+				
 				<SplitContainer id="idAppControl" mode="HideMode"/>
 			</Page>
 		</pages>

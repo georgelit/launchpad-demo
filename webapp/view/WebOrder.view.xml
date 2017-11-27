@@ -199,27 +199,26 @@ controllerName="ysc.websocket.controller.WebOrder"
 					</headerToolbar>
 					<columns>
 						<Column
-								minScreenWidth="Tablet"
-								demandPopin="true">
+								minScreenWidth="Phone">
 							<Text text="순번"/>
 						</Column>
 						<Column
-								minScreenWidth="Tablet"
+								minScreenWidth="Phone"
 								demandPopin="true">
 							<Text text="주문일"/>
 						</Column>
 						<Column
-								minScreenWidth="Tablet"
+								minScreenWidth="Phone"
 								demandPopin="true">
 							<Text text="지시일"/>
 						</Column>
 						<Column
-								minScreenWidth="Tablet"
+								minScreenWidth="Phone"
 								demandPopin="true">
 							<Text text="Sold-to"/>
 						</Column>
 						<Column
-								minScreenWidth="Tablet"
+								minScreenWidth="Phone"
 								demandPopin="true">
 							<Text text="Sold-to Name"/>
 						</Column>
@@ -267,12 +266,12 @@ controllerName="ysc.websocket.controller.WebOrder"
 								<ObjectIdentifier
 										title="{orderModel>seq}"/>
 								<Text text="{orderModel>req_date}"/>
-								<Text text="{orderModel>rdd_date}"/>
-								<Text text="{orderModel>kunag}"/>
+								<Input value="{orderModel>rdd_date}" width="100px"/>
+								<Text text="{orderModel>kunag}" width="120px"/>
 								<Text text="{orderModel>kunagt}"/>
-								<Text text="{orderModel>kunnr}"/>
+								<SearchField value="{orderModel>kunnr}"/>
 								<Text text="{orderModel>kunnrt}"/>
-								<Text text="{orderModel>matnr}"/>
+								<SearchField value="{orderModel>matnr}"/>
 								<Text text="{orderModel>ord_lfimg}"/>
 								<Text text="{orderModel>req_qty}"/>
 								<Text text="{orderModel>meins}"/>
@@ -281,16 +280,12 @@ controllerName="ysc.websocket.controller.WebOrder"
 						</ColumnListItem>
 					</items>
 				</Table>
+				
 			</f:content>
 
 			<!-- DynamicPage Footer -->
 			<f:footer>
-				<OverflowToolbar>
-					<ToolbarSpacer/>
-					<Button type="Accept" text="오더생성"/>
-					<Button type="Reject" text="오더취소"/>
-					<Button type="Reject" text="주문취소"/>
-				</OverflowToolbar>
+
 			</f:footer>
 		</f:DynamicPage>
 </mvc:View>
