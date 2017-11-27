@@ -98,7 +98,7 @@
 			},{
 				"name": "WebOrder",
 				"pattern": "WebOrder",
-				"target": ["Master","WebOrder"]
+				"target": ["Master","SmartFilterBar"]
 			}],
 			"targets": {
 				"Master": {
@@ -113,6 +113,11 @@
 				},"WebOrder": {
 					"viewName": "WebOrder",
 					"viewId": "idWebOrder",
+					"controlAggregation": "detailPages",
+					"viewLevel": 1
+				},"SmartFilterBar": {
+					"viewName": "SmartFilterBar",
+					"viewId": "idSmartFilterBarr",
 					"controlAggregation": "detailPages",
 					"viewLevel": 1
 				}
