@@ -4,7 +4,7 @@
 	xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
 	controllerName="ysc.websocket.controller.SmartFilterBar"
 	height="100%">
-	<Page>
+	<Page showHeader="false">
 	<!--<Button id="toggleUpdateMode" text="Change to 'LiveMode'" press="toggleUpdateMode"></Button>		-->
 		<smartFilterBar:SmartFilterBar id="smartFilterBar"
 		    persistencyKey="aaa"
