@@ -36,8 +36,8 @@
 			</smartFilterBar:layoutData>  					
 		</smartFilterBar:SmartFilterBar>
 		<smartTable:SmartTable id="smartTable" entitySet="LineItemsSet"
-			smartFilterId="smartFilterBar" tableType="Table" useExportToExcel="true"
-			useVariantManagement="false" useTablePersonalisation="true" header="Line Items"
+			smartFilterId="smartFilterBar" tableType="ResponsiveTable" useExportToExcel="true"
+			useVariantManagement="true" persistencyKey="demo-smart" useTablePersonalisation="true" header="Line Items"
 			showRowCount="true">
 			<smartTable:layoutData>
 				<FlexItemData growFactor="1" baseSize="0%" />
