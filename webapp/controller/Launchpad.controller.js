@@ -13,14 +13,14 @@ sap.ui.define([
 			onInit: function() {
 				
 				var oViewModel = new sap.ui.model.json.JSONModel();
-				oViewModel.loadData('/sap/bc/ui5_ui5/sap/ylaunchpad_demo/model/tileData.json');
+				oViewModel.loadData('./model/tileData.json');
 				this.getView().setModel(oViewModel, "localModel");
 				
 		
 			},
 			
 			press: function() {
-				this.getRouter().navTo("WebOrder", {}, true);
+				this.getRouter().navTo("WebOrder");
 			}
 			
 		/**
